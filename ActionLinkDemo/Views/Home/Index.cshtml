@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<nav>
+    <ul>
+        <li>@Html.ActionLink("Home Page", "Index", "Home")</li>
+        <li>@Html.ActionLink("About Us Page", "AboutUs", "Home")</li>
+        <li>@Html.ActionLink("Contact Us Page", "ContactUs", "Home")</li>
+    </ul>
+</nav>
+
+<h2>Index</h2>
+<p>This is Home Page</p>
+@Html.TextBox("FullName");
+@Html.TextBox("fullName", "Amit", new
+{
+    style = "backbround:red;color:blue;"
+});
+
+@Html.TextBox("fullname", "Krishna", new
+{
+    @class = "textBox"
+});
+<br />
+<br />
+@Html.Label("Username")&nbsp; @Html.TextBox("Username")
+<br />
+<br />
+@Html.Label("Password") &nbsp; @Html.Password("pass")
+<br />
+<br />
+@Html.Label("Male") &nbsp; @Html.RadioButton("Gender", "Male")
+@Html.Label("Female") &nbsp; @Html.RadioButton("Gender", "Female")
+<br />
+<br />
+@Html.Label("Select Country") &nbsp; @Html.DropDownList("CountryList",new SelectList(new[] {"India","Pakistan","Srilanka","Bangladesh"}),"Choose")
+<br/>
+<br/>
+@Html.Label("Comment") &nbsp; @Html.TextArea("CommentArea","",5,20,null)
+<br/><br/>
+@Html.CheckBox("AcceptTerms",true) &nbsp; @Html.Label("I accpet the terms")
+<br/><br/>
+@Html.Hidden("id")
+<br/>
+<br/>
+<input type="submit" value="Submit"/>
+
